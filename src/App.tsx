@@ -1,7 +1,8 @@
-import Game from './components/Game';
+import React from 'react';
+import Game from './features/game/Game';
 
-function App() {
+const App: React.FC = () => {
   return <Game />;
-}
+};
 
 export default App;

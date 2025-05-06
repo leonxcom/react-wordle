@@ -1,5 +1,5 @@
 import React from 'react';
-import { LetterState } from '../types';
+import { LetterState } from '../../../shared/types';
 
 interface KeyboardProps {
   letterStates: Record<string, LetterState>;
@@ -14,7 +14,7 @@ const Keyboard: React.FC<KeyboardProps> = ({ letterStates, onKey }) => {
   ];
 
   return (
-    <div id="keyboard">
+    <div id="keyboard" role="group" aria-label="虚拟键盘">
       {rows.map((row, i) => (
         <div className="row" key={i}>
           {i === 1 && <div className="spacer"></div>}
@@ -23,6 +23,9 @@ const Keyboard: React.FC<KeyboardProps> = ({ letterStates, onKey }) => {
               key={key}
               className={`${key.length > 1 ? 'big' : ''} ${letterStates[key] || ''}`}
               onClick={() => onKey(key)}
+              aria-label={key === 'Backspace' ? '删除' : key === 'Enter' ? '提交' : key}
+              aria-pressed="false"
+              data-key={key}
             >
               {key !== 'Backspace' ? (
                 <span>{key}</span>
@@ -32,6 +35,8 @@ const Keyboard: React.FC<KeyboardProps> = ({ letterStates, onKey }) => {
                   height="24"
                   viewBox="0 0 24 24"
                   width="24"
+                  aria-hidden="true"
+                  focusable="false"
                 >
                   <path
                     fill="currentColor"

@@ -3,4 +3,4 @@ export const enum LetterState {
   CORRECT = 'correct',
   PRESENT = 'present',
   ABSENT = 'absent'
-}
+} 

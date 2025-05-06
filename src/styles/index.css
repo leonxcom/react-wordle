@@ -1,0 +1,4 @@
+/* All styles have been moved to game.css */
+
+/* 导入所有游戏样式 */
+@import './game.css';

@@ -1,17 +1,17 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 import App from './App.tsx'
-import './index.css'
+import './styles/index.css'
 
-// 调整窗口大小以缩放面板大小
+// Adjust panel size when window is resized
 function onResize() {
-  // 在移动设备上获取实际的vh
+  // Get actual vh on mobile devices
   document.body.style.setProperty('--vh', window.innerHeight + 'px')
 }
 
-// 启动时设置大小
+// Set size on startup
 onResize()
-// 在窗口调整大小时重新计算
+// Recalculate on window resize
 window.addEventListener('resize', onResize)
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
