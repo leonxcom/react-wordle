@@ -2,7 +2,7 @@ import { describe, it, expect, vi, beforeEach } from 'vitest';
 import { renderHook, act } from '@testing-library/react';
 import { useGame } from './useGame';
 import { LetterState } from '../../../shared/types';
-import * as wordsModule from '../../../shared/utils/words';
+// import * as wordsModule from '../../../shared/utils/words';
 import * as storageModule from '../../../shared/utils/storage';
 
 // 模拟依赖
